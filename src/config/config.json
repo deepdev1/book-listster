@@ -1,0 +1,7 @@
+{
+    "url": {
+        "nyt-books-api": "https://api.nytimes.com/svc/books/v3/lists.json?api-key=5hZf4i0Ko5qvZY8nA4lz02sGTSFbRwDe",
+        "cover-images": "https://storage.googleapis.com/du-prd/books/images/",
+        "attribution-img": "https://developer.nytimes.com/files/poweredby_nytimes_200c.png?v=1583354208354"
+    }
+}
