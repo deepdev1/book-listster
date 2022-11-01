@@ -13,6 +13,7 @@ function Content({bookList}) {
 
     // const [bookList, setBookList] = useState();
 
+    const [isError, setError] = useState(false);
     // useEffect(() => {
     //     getBookList();
     // }, []);
@@ -28,12 +29,34 @@ function Content({bookList}) {
     const imageUrl = configData.url["cover-images"];
     
     const items = books?.map( book => {
+
+        
+        const node = document.contains(document.querySelector(".missing-img"));
+        console.log("node", node);
+
+        if(document.contains(document.querySelector(".missing-img"))) {
+            const sections = document.querySelectorAll(".missing-img");
+            console.log("sections", sections);
+            sections.forEach(section => section.remove());
+        }
+
+        const bookCover = imageUrl + book?.book_details[0].primary_isbn13 + '.jpg';
+
+        const missingImgDiv = document.createElement("div");
+        missingImgDiv.classList.add("missing-img");
+        missingImgDiv.innerHTML = book?.book_details[0].title;
+
         return (
             <div className="book">
-                <img className="cover-image" src={imageUrl + book?.book_details[0].primary_isbn13 + '.jpg'} />
+                <img className="cover-image" src={bookCover} 
+                    onError={ (e) => {
+                        e.target.replaceWith(missingImgDiv);
+                        e.target.onError=null;
+                    }}/>
             </div>
-        )
+        );
     });
+
 
 
     return (

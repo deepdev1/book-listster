@@ -24,10 +24,33 @@ function App() {
         // setCategory(selectedOption);
     };
 
+    const customStyles = {
+        option: (provided, state) => ({
+          ...provided,
+          borderBottom: '1px dotted pink',
+          color: state.isSelected ? 'red' : 'blue',
+          padding: 20,
+        }),
+        control: () => ({
+          // none of react-select's styles are passed to <Control />
+        //   width: 200,
+        }),
+        singleValue: (provided, state) => {
+        //   const opacity = state.isDisabled ? 0.5 : 1;
+        //   const transition = 'opacity 300ms';
+      
+        //   return { ...provided, opacity, transition };
+        }
+      }
+
     return (
         <div className="main-container">
             <div className="header"> {heading} 
-                <Select className="filter" options={configData.select_options} onChange={onSelectionChange} />
+                <Select className="filter" 
+                options={configData.select_options} 
+                onChange={onSelectionChange} 
+                styles={customStyles}
+      />
             </div>
 
             <div className="content-container">

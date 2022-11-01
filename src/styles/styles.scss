@@ -39,7 +39,7 @@ $base-color: #000;
         gap: 1.8rem;
 
         .book {
-            .cover-image {
+            .cover-image, .missing-img {
                 width: 325px;
                 height: 500px;
             }
