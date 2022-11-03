@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import Select from "react-select";
 import ApiService from "../services/api-service";
 import Content from "./Content";
-import configData from '../config/config.json';
 import "../styles/styles.scss";
 
 
