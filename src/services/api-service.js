@@ -9,10 +9,8 @@ export default class ApiService {
         return this.instance;
     }
 
-
-    
-    async getBookList(category="hardcover-nonfiction") {
-        const booksApi = configData["url"]["nyt-books-api"] + "&list=" + category;
+    async getBookList() {
+        const booksApi = configData["url"]["nyt-books-api"] + "&list=hardcover-nonfiction";
         const response = await fetch(booksApi);
         return response.json();
     }
