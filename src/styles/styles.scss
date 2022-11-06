@@ -37,12 +37,23 @@ $base-color: #000;
         @include flex-layout(center, center);
         flex-wrap: wrap;
         gap: 1.8rem;
+        position: relative;
 
         .book {
             .cover-image, .missing-img {
                 width: 325px;
                 height: 500px;
             }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .gallery-modal {
+            margin-top: 4rem !important;
+            position: relative;
+
         }
     
     }
@@ -51,5 +62,23 @@ $base-color: #000;
 
 }
 
+
+
+.ReactModal__Overlay {
+    position: absolute;
+    top: 4.5rem !important;
+    background-color: rgba(255,255,255,0.32) !important;
+}
+
+
+.ReactModal__Content {
+    width: 70% !important;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
 
 
